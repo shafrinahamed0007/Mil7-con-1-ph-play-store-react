@@ -7,8 +7,9 @@ const Homepage = () => {
   return (
     <>
     <Banner />
-    <Trendingapp />
     <Stats />
+    <Trendingapp />
+    
     </>
   )
 };
