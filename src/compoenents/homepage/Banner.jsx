@@ -3,7 +3,7 @@ import bannerImg from "../../assets/images/hero.png";
 
 const Banner = () => {
   return (
-    <div className="min-h-[80vh] text-center w-11/12 lg:w-8/12 mx-auto mt-5 space-y-5 ">
+    <div className="min-h-[80vh] text-center  lg:w-8/12 mx-auto mt-5 space-y-5 ">
       <h2 className="font-bold text-3xl ">
         We Build <br /> <span className="text-purple-500">Productive</span> Apps
       </h2>

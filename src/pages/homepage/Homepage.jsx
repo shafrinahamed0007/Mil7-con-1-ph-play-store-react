@@ -5,7 +5,7 @@ import Trendingapp from "../../compoenents/homepage/Trendingapp";
 
 const Homepage = () => {
   const data = useLoaderData();
-  console.log(data, "Data From Home page");
+  // console.log(data, "Data From Home page");
   return (
     <>
       <Banner />
