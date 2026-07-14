@@ -17,17 +17,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Homepage />,
+        loader: () => fetch("/data.json"),
       },
       {
         path: "/apps",
-        element: <Apps />
+        element: <Apps />,
       },
       {
         path: "/installapp",
-        element: <Installation />
-      }
+        element: <Installation />,
+      },
     ],
-    errorElement: <NotFound />
+    errorElement: <NotFound />,
   },
 ]);
 
