@@ -1,7 +1,8 @@
 // import { use } from "react";
 
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 
+import useApps from "../../hooks/useApps";
 import AppCard from "../ui/AppCard";
 import { Link } from "react-router";
 
@@ -10,34 +11,36 @@ import { Link } from "react-router";
 // const appsPromise = fetch("/data.json").then((res) => res.json());
 
 const Trendingapp = () => {
-  const [apps, setApps] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [apps, setApps] = useState([]);
+  // const [loading, setLoading] = useState(true);
   // const apps = use(appsPromise);
   // console.log(apps);
 
   // const data = useLoaderData();
   // console.log(data,"Data from trending apps section")
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch("/data.json");
-      const data = await res.json();
-      // console.log(
-      //   data,
-      //   "Data fetching fron trending apps section in home page",
-      // );
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const res = await fetch("/data.json");
+  //     const data = await res.json();
+  //     // console.log(
+  //     //   data,
+  //     //   "Data fetching fron trending apps section in home page",
+  //     // );
 
-      setTimeout(() => {
-        setApps(data);
-        setLoading(false);
-      }, 2000);
-    };
-    fetchData();
-  }, []);
+  //     setTimeout(() => {
+  //       setApps(data);
+  //       setLoading(false);
+  //     }, 2000);
+  //   };
+  //   fetchData();
+  // }, []);
 
-  console.log(loading, "Data Loading");
+  // console.log(loading, "Data Loading");
 
   // console.log(apps, "Data fetching from trending apps using useStatehooks");
+
+  const { apps, loading } = useApps();
   return (
     <div className="text-white">
       {/* Section Header */}
@@ -62,8 +65,9 @@ const Trendingapp = () => {
       )}
 
       <div className="flex justify-center">
-        <Link to={'/apps'}>
-        <button className="btn btn-primary">View All</button></Link>
+        <Link to={"/apps"}>
+          <button className="btn btn-primary">View All</button>
+        </Link>
       </div>
     </div>
   );
