@@ -1,11 +1,10 @@
-
+import { useContext } from "react";
+import { InstallAppsContext } from "../../context/InstalledAppsContext";
 
 const Installation = () => {
-    return (
-        <div>
-            Installation Page
-        </div>
-    );
+  const contextData = useContext(InstallAppsContext);
+  console.log(contextData, "Context Data");
+  return <div>Installation Page</div>;
 };
 
 export default Installation;
