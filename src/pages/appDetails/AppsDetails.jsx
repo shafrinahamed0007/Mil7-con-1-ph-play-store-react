@@ -2,7 +2,9 @@ import { useParams } from "react-router";
 import useApps from "../../hooks/useApps";
 import { FaStar } from "react-icons/fa";
 import { MdOutlineFileDownload } from "react-icons/md";
-import { useState } from "react";
+import { useContext } from "react";
+import { InstallAppsContext } from "../../context/InstalledAppsContext";
+import { toast } from "react-toastify";
 
 const AppsDetails = () => {
   const { id } = useParams();
@@ -13,12 +15,14 @@ const AppsDetails = () => {
   const expectedApp = apps.find((app) => app.id == id);
   console.log(expectedApp, "Expected ID");
 
-  const [installApps, setInstallApps] = useState([]);
+  // const [installApps, setInstallApps] = useState([]);
+  const { installApps, setInstallApps } = useContext(InstallAppsContext);
   const handleInstallApp = () => {
     setInstallApps([...installApps, expectedApp]);
+    toast.sucess("App is isntalled!");
   };
 
-  console.log("Install Apps: ", installApps)
+  console.log("Install Apps: ", installApps);
 
   return loading ? (
     <div className="flex justify-center">
