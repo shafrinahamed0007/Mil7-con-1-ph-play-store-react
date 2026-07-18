@@ -14,6 +14,9 @@ const Navbar = () => {
       <li>
         <MyNavLink to="/installapp">Install Apps</MyNavLink>
       </li>
+      <li>
+        <MyNavLink to="/dashboard">Dashboard</MyNavLink>
+      </li>
     </>
   );
   return (
