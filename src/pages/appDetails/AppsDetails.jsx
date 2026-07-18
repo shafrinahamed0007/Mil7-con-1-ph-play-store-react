@@ -19,7 +19,7 @@ const AppsDetails = () => {
   const { installApps, setInstallApps } = useContext(InstallAppsContext);
   const handleInstallApp = () => {
     setInstallApps([...installApps, expectedApp]);
-    toast.sucess("App is isntalled!");
+    toast.success(`${expectedApp.title} is installed`);
   };
 
   console.log("Install Apps: ", installApps);
